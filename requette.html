@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vendor/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+    <script src="../vendor/js/jquery.min.js"></script>
+    <script src="../vendor/js/jquery.dataTables.min.js"></script>
+</head>
+<style>
+    .logo {
+        width: 40%;
+    }
+
+    .barre_recherche {
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+    .icone_recherche {
+        height: 2%;
+    }
+
+    .image_requette {
+        height: 250px;
+    }
+
+    .magistrat {
+        height: 200px;
+
+    }
+
+    .i {
+        background-image: url(./dossiers/magistrat.jfif);
+        background-size: contain;
+        height: 300px;
+    }
+
+    .prestation {
+        color: white;
+        text-shadow: 2px 4px 6px black;
+        letter-spacing: 4px;
+        font-family: 'popping', sans-serif;
+    }
+
+    .header {
+        background-image: url(./vv/téléchargement\ \(23\).jfif);
+        background-size: cover;
+        color: white;
+    }
+
+    .textee {
+        background-image: url(./vv/images\ \(28\).jfif);
+        background-size: cover;
+        color: white;
+
+    }
+
+    .list_toggle,
+    .close_toggle {
+        cursor: pointer;
+    }
+
+    .toggle {
+        background-image: url(./vv/images\ \(28\).jfif);
+        background-size: cover;
+
+    }
+</style>
+
+<body>
+    <div class=" container-fluid col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2 toggle position-fixed  text-light mt-5">
+        <span class="fa fa-times float-end mt-3 fs-2 mx-4 close_toggle "></span><br><br><br>
+        <div>
+            <div class="ms-5 fs-5">
+                <p><span class="fa fa-balance-scale "></span> Prestation</p> </span>
+            </div><br>
+            <hr>
+            <div class="ms-5 fs-5">
+                <p><span class="fa fa-gavel "></span> Service</p> </span>
+            </div><br>
+            <hr>
+            <div class="ms-5 fs-5">
+                <p><span class="fa fa-hourglass-end "></span> Partenaires</p> </span>
+            </div><br>
+            <hr>
+            <div class="ms-5 fs-5">
+                <p><span class="fa fa-diamond "></span> conditions</p> </span>
+            </div><br><br>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid col-lg-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12 header ">
+
+        <div class="row ">
+            <div class=" col-lg-3 col-sm-3 col-md-3 col-xl-3 col-xxl-3 ">
+                <div class="d-flex">
+                    <img src="./logo.jfif" alt="" class="logo mt-1 border rounded-circle">
+                    <y class="fw-bold mt-5 fs-3">II-dossiers</y>
+                </div>
+
+            </div>
+            <div class=" col-lg-5 col-sm-5 col-md-5 col-xl-5 col-xxl-5  ">
+                <div class="d-flex mt-5 ">
+                    <span class="fa fa-search bg-secondary bg-opacity-25 fs-5  icone_recherche p-1 "></span><input
+                        type="search" placeholder="Recherche"
+                        class="w-100 barre_recherche border-0 bg-secondary bg-opacity-25  ">
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-sm-4 col-md-4 col-xl-4 col-xxl-4  ">
+                <div class="d-flex justify-content-between mt-5">
+                    <div>
+                        Acueil
+                    </div>
+                    <div>
+                        A propos
+                    </div>
+                    <div>
+                        Nos conseils
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <span class="fa fa-list fw-bold fs-4 list_toggle"></span>
+
+    </div>
+
+
+    </div>
+    <br><br>
+    <div class="container-fluid  col-lg-12 col-md-12 col-sm-12 col-xl-12 col-xxl-12">
+        <div class="row">
+            <div class="card col-lg-1 col-md-1 col-sm-1 col-xl-1 col-xxl-1   border-0 ">
+
+            </div>
+            <div
+                class="card col-lg-2 col-md-2 col-sm-2 col-xl-2 col-xxl-2 shadow border border-2 border-warning shadow ">
+                <center><img src="./demi_photo1.jfif" alt="" class="rounded-circle w-75 mt-1 shadow"></center>
+                <div>
+                    a l'absence du juge suis charger d'appliquee la loi en tant que substiut
+                    
+
+
+                </div>
+
+            </div><br>
+            <div class="card col-lg-2 col-md-2 col-sm-2 col-xl-2 col-xxl-2  border-0">
+
+            </div><br>
+            <div class="card col-lg-2 col-md-2 col-sm-2 col-xl-2 col-xxl-2 border border-2 border-warning shadow ">
+                <center><img src="./demi_photo2.jfif" alt="" class="rounded-circle w-75 mt-1 shadow"></center>
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    . Voluptates harum, laborum asperiores hic et itaque eligendi
+
+                </div>
+
+            </div><br>
+            <div class=" col-lg-2 col-md-2 col-sm-2 col-xl-2 col-xxl-2">
+
+            </div><br>
+            <div class="card col-lg-2 col-md-2 col-sm-2 col-xl-2 col-xxl-2 border border-2 border-warning shadow ">
+                <center><img src="./demi_photo3.jfif" alt="" class="rounded-circle w-75 mt-1 shadow"></center>
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    . Voluptates harum, laborum asperiores hic et itaque eligendi
+                </div>
+
+
+            </div>
+            <div class="card col-lg-1 col-md-1 col-sm-1 col-xl-1 col-xxl-1   border-0 ">
+            </div>
+        </div><br>
+        <hr class="opacity-25 shadow"><br>
+
+        <div class="row i ">
+            <center>
+                <h1 class="  prestation fw-bold mt-5 ">Prestation de nos <br> services</h1>
+            </center>
+
+
+        </div><br>
+        <div>
+            <div class="row   ">
+                <div class="col-lg-4 col-sm-4 col-md-4 col-xl-4 col-xxl-4  ">
+                    <center><img src="./dossiers/téléchargement (27).jfif  " class="rounded shadow" alt=""></center><br>
+                </div><br>
+                <div class="col-lg-4 col-sm-4 col-md-4 col-xl-4 col-xxl-4   ">
+                    <center> <img src="./dossiers/téléchargement (26).jfif " class="rounded shadow" alt=""></center><br>
+                </div><br>
+
+                <div class="col-lg-4 col-sm-4 col-md-4 col-xl-4 col-xxl-4    ">
+                    <center> <img src="./dossiers/téléchargement (28).jfif " class="rounded shadow" alt=""></center><br>
+                </div><br><br><br>
+            </div>
+
+
+
+
+
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-lg-3 col-sm-3 col-md-3 col-xl-3 col-xxl-3 ">
+                <div>
+                    <img src="./dossiers/image_requette.jfif" alt="" class="image_requette">
+                </div>
+            </div>
+
+            <div class="col-lg-9 col-sm-9 col-md-9 col-xl-9 col-xxl-9 bg-light shadow rounded">
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus recusandae dignissimos eveniet vitae
+                    omnis. Debitis magnam
+                    dolorem beatae, ab assumenda rem saepe vero nulla molestias corporis, recusandae repudiandae soluta
+                    tempore! Lorem ipsu
+                    m dolor, sit amet consectetur adipisicing elit. Dolor, odio quasi eveniet laboriosam autem ad
+                    dignissimos
+                    ullam eius illo, quam cumque! Inventore quis aperiam nulla et consequuntur quia quo possimus!</div>
+                <br><br>
+                <div>
+                    <textarea name="" id="" class="w-100 p-5" placeholder="Saisissez votre demande ici "></textarea>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="container-fluid col-lg-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12 footer bg-dark text-light textee  ">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-3 col-xxl-4 col-xl-4">
+                <p class="text-warning">A propos de nous</p>
+                <p><span class="fa fa-circle"></span> Qui somme nous?</p>
+                <p><span class="fa fa-circle"></span> Condition d'utilisation</p>
+                <p><span class="fa fa-circle"></span> Politique de confidentialité</p>
+
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-3 col-xxl-4 col-xl-4">
+                <p class="text-warning">Nos reseau</p>
+                <p><span class="fab fa-youtube"></span> Youtube</p>
+                <p><span class="fab fa-facebook"></span> Facebook</p>
+                <p><span class="fab fa-twitter"></span> Twitter</p>
+                <p><span class="fab fa-instagram"></span> Instagram</p>
+
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xxl-4 col-xl-4">
+                <p class="text-warning">Email</p>
+                <p><span class="fa fa-home"></span> ii_dossiers_tribunal@gmail.com</p>
+            </div>
+        </div>
+
+
+    </div>
+    <script>
+        $(function () {
+            $('.toggle').hide();
+            $('.list_toggle').click(function () {
+                $('.card').hide(1000);
+
+                $('.toggle').slideToggle(1000);
+            });
+            $('.close_toggle').click(function () {
+                $('.card').show(1000);
+                $('.toggle').slideToggle(1000);
+            });
+
+
+        });
+    </script>
+
+
+</body>
+
+</html>

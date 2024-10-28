@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vendor/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+    <script src="../vendor/js/jquery.min.js"></script>
+    <script src="../vendor/js/jquery.dataTables.min.js"></script>
+
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: Release;
+    }
+    .modal-btn {
+        padding: 10px 14px;
+        font-size: 18px;
+        margin: 100px auto;
+        display: block;
+        min-width: 150px;
+        cursor: pointer;
+    }
+    .modal-container{
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height:100vh;
+        transition: visibility 0.4s;
+    }
+    .modal-container.active{
+        visibility: visible;
+        
+
+    }
+.overlay{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background: #a39f9fd3;
+    transition: opacity 0.4s  ease-in-out;
+}
+.modal-container.active .overlay{
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+
+}
+
+.moda{
+    opacity: 0;
+    width: 95%;
+    max-width: 500px;
+    min-width: 300px;
+    padding: 30px;
+    background: #fff;
+
+border-radius: 5px;
+position:absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, calc(-50% - 50px));
+transition: opacity 0.4s  ease-in-out;
+transform: 0.4s ease-in-out;
+}
+.modal-container.active .moda{
+    opacity: 1;
+    transition: opacity 0.4s  0.2s ease-in-out;
+    transform: translate(-50%,  -50%);
+    transform: 0.4s   ease-in-out;
+   
+
+}
+ 
+.close-modal{
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    position: absolute;
+    top:10px;
+    right: 10px;
+    cursor: pointer;
+    background: #ff365e;
+    color:#fff;
+}
+.moda h1{
+    margin-bottom: 10px;
+    font-family:Montserrat, sans-serif;
+    font-weight: 500;
+
+}
+.moda p{
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+</style>
+
+<body>
+    <div class="modal-container ">
+
+        <div class="  overlay modal-trigger"></div>
+        
+        <div class="moda" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
+            <button class="close-modal modal-trigger" aria-label="close-modal">X</button>
+
+            <h1 id="modalTitle">Du contenu</h1>
+            
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                . Amet perspiciatis est suscipit vitae libero, explicabo
+                expedita, aperiam ratione, sequi
+                dicta repudiandae hic consectetur. Modi, maxime aperiam
+                voluptatibus recusandae fuga excepturi.</p>
+        </div>
+    </div>
+
+    <button class="modal-btn modal-trigger">Open Modal</button>
+
+    <script>
+        const modalcontainer = document. 
+        querySelector(".modal-container");
+        const modaltriggers = document. 
+        querySelectorAll(".modal-trigger");
+
+        modaltriggers.forEach(trigger => trigger.addEventListener("click", togglemodal) )
+
+
+
+    function togglemodal(){
+        modalcontainer.classList.toggle("active")
+
+    }
+    </script>
+
+
+</body>
+
+</html>

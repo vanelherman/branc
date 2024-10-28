@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../vendor/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+    <script src="../vendor/js/jquery.min.js"></script>
+    <script src="../vendor/js/jquery.dataTables.min.js"></script>
+
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Release;
+    }
+
+    .modal-btn {
+
+        cursor: pointer;
+    }
+
+    .modal-container {
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        transition: visibility 0.4s;
+    }
+
+    .modal-container.active {
+        visibility: visible;
+
+
+    }
+
+    .overlay {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        background: #333333de;
+        transition: opacity 0.4s ease-in-out;
+    }
+
+    .modal-container.active .overlay {
+        opacity: 1;
+        transition: opacity 0.4s ease-in-out;
+
+    }
+
+    .moda {
+        background-image: url(./vv/images\ \(32\).jfif);
+        background-size: cover;
+        opacity: 0;
+        width: 95%;
+        max-width: 500px;
+        min-width: 300px;
+        padding: 30px;
+        color: white;
+
+        border-radius: 5px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, calc(-50% - 50px));
+        transition: opacity 0.4s ease-in-out;
+        transform: 0.4s ease-in-out;
+    }
+
+    .modal-container.active .moda {
+        opacity: 1;
+        transition: opacity 0.4s 0.2s ease-in-out;
+        transform: translate(-50%, -50%);
+        transform: 0.4s ease-in-out;
+
+
+    }
+
+    .close-modal {
+        padding: 3px 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        background: #ff365e;
+        color: #fff;
+    }
+
+    .moda h1 {
+        margin-bottom: 10px;
+        font-family: Montserrat, sans-serif;
+        font-weight: 500;
+
+    }
+
+    .moda p {
+        line-height: 1.4;
+        margin-bottom: 5px;
+    }
+
+    /* fin de style modal */
+    .logo {
+        width: 40%;
+    }
+
+    .barre_recherche {
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+    .icone_recherche {
+        height: 2%;
+    }
+
+    .user {
+        height: 110px;
+    }
+
+    .avocat {
+        background-image: url(./avocat.jfif);
+        background-size: cover;
+        height: 73.5%;
+    }
+
+    .header {
+        background-image: url(./vv/téléchargement\ \(23\).jfif);
+        background-size: cover;
+        color: white;
+
+    }
+
+    .textee {
+        background-image: url(./vv/images\ \(28\).jfif);
+        background-size: cover;
+        color: white;
+
+    }
+
+    .texte {
+
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .bible_tribunal {
+        background-image: url(./bible_tribunal.jfif);
+        background-size: cover;
+        padding: 150px 5px;
+        max-width: 100%;
+    }
+
+    .input_log {
+        color: white;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        background-color: black;
+        border: 2px solid white;
+
+
+    }
+
+    .hr {
+        color: #fff;
+    }
+
+    .user_login {
+        font-size: 3.5em;
+
+    }
+
+    .list_toggle,
+    .close_toggle {
+        cursor: pointer;
+    }
+
+    .toggle {
+        background-image: url(./vv/images\ \(28\).jfif);
+        background-size: cover;
+
+    }
+</style>
+
+<body>
+    <div class="modal-container ">
+
+        <div class="  overlay modal-trigger"></div>
+
+        <div class="moda shadow" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
+            <button class="close-modal modal-trigger" aria-label="close-modal"><span
+                    class="fa fa-close"></span></button>
+
+            <center>
+                <span class="fa fa-user text-warning shadow user_login  "></span>
+            </center>
+
+            <div class="container-fluid">
+                <hr class="hr">
+                <label for="" class="mx-3 text-light  fw-bold">Tél:</label><input type="text"
+                    placeholder="Enter your phone number" class="input_log float-end w-75 fs-5"><br><br><br>
+                <label for="" class="mx-3 text-light  fw-bold">Mail:</label><input type="mail"
+                    placeholder="Enter your email" class="input_log float-end w-75 fs-5"><br><br><br>
+                <label for="" class="mx-3 text-light  fw-bold fa fa-key"></label><input type="password"
+                    placeholder="Enter your name" class="input_log float-end w-75  fs-5"><br>
+            </div><br>
+
+            <a href="./requette.html"><button
+                    class="float-end p-2 rounded text-dark fw-bold bg-shadow bg-warning border-0 shadow ">connexion</button></a>
+        </div>
+
+    </div>
+    <div class=" container-fluid col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2 toggle position-fixed  text-light mt-5 ">
+        <span class="fa fa-times float-end mt-3 fs-2 mx-4 close_toggle "></span><br><br><br>
+        <div>
+            <div class="ms-5 fs-5">
+                <p><span class="fa fa-balance-scale "></span> Prestation</p> </span>
+            </div><br>
+            <hr>
+            <div class="ms-5 fs-5">
+                <p><span class="fa fa-gavel "></span> Service</p> </span>
+            </div><br>
+            <hr>
+            <div class="ms-5 fs-5">
+                <p><span class="fa fa-hourglass-end "></span> Partenaires</p> </span>
+            </div><br>
+            <hr>
+            <div class="ms-5 fs-5">
+                <p><span class="fa fa-diamond "></span> conditions</p> </span>
+            </div><br><br>
+
+        </div>
+
+    </div>
+    <div class="container-fluid col-lg-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12 header  ">
+
+        <div class="row ">
+            <div class=" col-lg-3 col-sm-3 col-md-3 col-xl-3 col-xxl-3 ">
+                <div class="d-flex">
+                    <img src="./logo.jfif" alt="" class="logo mt-1 border rounded-circle">
+                    <y class="fw-bold mt-5 fs-3">II-dossiers</y>
+                </div>
+
+            </div>
+            <div class=" col-lg-5 col-sm-5 col-md-5 col-xl-5 col-xxl-5  ">
+                <div class="d-flex mt-5 ">
+                    <span class="fa fa-search bg-secondary bg-opacity-25 fs-5  icone_recherche p-1 "></span><input
+                        type="search" placeholder="Recherche"
+                        class="w-100 barre_recherche border-0 bg-secondary bg-opacity-25  ">
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-sm-4 col-md-4 col-xl-4 col-xxl-4  ">
+                <div class="d-flex justify-content-between mt-5">
+                    <div>
+                        Acueil
+                    </div>
+                    <div>
+                        A propos
+                    </div>
+                    <div>
+                        Nos conseils
+                        <button class=" modal-btn modal-trigger rounded border-0 ms-1  bg-warning p-1 ">Sign in</button>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <span class="fa fa-list fw-bold fs-4 list_toggle"></span>
+
+    </div>
+
+
+
+    </div><br><br>
+    <div class="container-fluid col-lg-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12 footer   ">
+        <div class="row">
+            <div class=" container-fluid col-lg-8 col-sm-8 col-md-8 col-xl-8 col-xxl-8 footer">
+                <div class="d-flex ">
+                    <button class="bg-warning border-0 rounded">un texte ici</button>
+                    <button class=" bg-opacity-25 border-0 rounded ms-3 header"> meme aussi ici</button>
+
+                </div><br>
+                <div>
+                    <h3>Un nouveau service de la justice pour suivre les affaires <br> civils en ligne</h3>
+                </div><br>
+                <p class="text-dark text-opacity-50">Publier le 20/03/2019</p>
+
+                <div class=" text-dark text-opacity-50 ">
+                    <div class="d-flex">
+                        <img src="./user.jfif" class="user " alt="">
+                        <p>nzali <br> Herman</p>
+                    </div>
+                    <div class="bible_tribunal mx-lg-5">
+
+                    </div>
+
+
+                </div>
+                <br><br>
+
+                <div class="opacity-75 bg-light rounded shadow mx-2 ">
+                    <p class="mx-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magnam non nam eaqu
+                        e dolorum vel, beatae necessitatibus molestias eos suscipi
+                        t officia, sequi ullam, earum magni perspiciatis deserunt asperiores. Eius, unde?
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magnam non nam eaqu
+                        e dolorum vel, beatae necessitatibus molestias eos suscipi
+                        t officia, sequi ullam, earum magni perspiciatis deserunt asperiores. Eius, unde?</p>
+                </div><br>
+
+                <div>
+                    <video src="./video.mp4" type="video/mp4" loop controls autoplay class="w-100 video "></video>
+
+
+                </div>
+
+            </div>
+            <div class=" col-lg-4 col-sm-4 col-md-4 col-xl-4 col-xxl-4 colone_droite     ">
+
+                <br>
+                <div class="bg-light p-1 shadow header rounded">
+                    <center><img src="./dossiers/images.png" alt="" class="rounded"></center>
+                </div>
+                <br>
+                <div class="">
+
+                    <center><img src="./balance_justice.jfif" alt=""></center>
+                </div>
+                <img src="./dossiers/téléchargement (32).jfif " class="w-100" alt="">
+                <div class="avocat  margin-bottom-2 ">
+
+                </div>
+
+                <br>
+
+
+            </div>
+            <div class="container-fluid col-lg-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12 footer   ">
+                <div class="row">
+                    <div class=" col-lg-8 col-sm-8 col-md-8 col-xl-8 col-xxl-8 footer  bg-warning bg-opacity-75   ">
+
+                        <div class="border border-2 border-warning ">
+                            <p class="texte  text-dark fw-bold mx-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quas vel eum
+                                voluptatibus exercitationem? Qui incidunt dolorum magnam nostru
+                                m rem aliquid? Ullam laboriosam repudiandae accusamus voluptates a? Ut, maxime deleniti!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quas vel eum
+                                voluptatibus exercitationem? Qui incidunt dolorum magnam nostru
+                                m rem aliquid? Ullam laboriosam repudiandae accusamus voluptates a? Ut, maxime deleniti!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quas vel eum
+                                voluptatibus exercitationem? Qui incidunt dolorum magnam nostru
+                                m rem aliquid? Ullam laboriosam repudiandae accusamus voluptates a? Ut, maxime deleniti!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quas vel eum
+                                voluptatibus exercitationem? Qui incidunt dolorum magnam nostru
+                                m rem aliquid? Ullam laboriosam repudiandae accusamus voluptates a? Ut, maxime deleniti!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quas vel eum
+                                voluptatibus exercitationem? Qui incidunt dolorum magnam nostru
+                                m rem aliquid? Ullam laboriosam repudiandae accusamus voluptates a? Ut, maxime deleniti!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quas vel eum
+                                voluptatibus exercitationem? Qui incidunt dolorum magnam nostru
+                                m rem aliquid? Ullam laboriosam repudiandae accusamus voluptates a? Ut, maxime deleniti!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quas vel eum
+                                voluptatibus exercitationem? Qui incidunt dolorum magnam nostru
+                                m rem aliquid? Ullam laboriosam repudiandae accusamus voluptates a? Ut, maxime deleniti!
+
+                            </p>
+
+                        </div>
+                        <div class="d-flex  opacity-50">
+                            <span class="fa fa-thumbs-up mx-4"></span>100 Vues
+                            <span class="fa fa-thumbs-down mx-4"></span>0
+                            <span class="fa fa-share mx-4"></span> Partagez
+                        </div>
+
+                    </div>
+
+                    <div class=" col-lg-4 col-sm-4 col-md-4 col-xl-4 col-xxl-4 colone_droite     ">
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container-fluid col-lg-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12 footer bg-dark text-light  textee ">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-3 col-xxl-4 col-xl-4">
+                <p class="text-warning mt-1">A propos de nous</p>
+                <p><span class="fa fa-circle"></span> Qui somme nous?</p>
+                <p><span class="fa fa-circle"></span> Condition d'utilisation</p>
+                <p><span class="fa fa-circle"></span> Politique de confidentialité</p>
+
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-3 col-xxl-4 col-xl-4">
+                <p class="text-warning mt-1">Nos reseau</p>
+                <p><span class="fab fa-youtube"></span> Youtube</p>
+                <p><span class="fab fa-facebook"></span> Facebook</p>
+                <p><span class="fab fa-twitter"></span> Twitter</p>
+                <p><span class="fab fa-instagram"></span> Instagram</p>
+
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xxl-4 col-xl-4">
+                <p class="text-warning mt-1">Email</p>
+                <p><span class="fa fa-home"></span> ii_dossiers_tribunal@gmail.com</p>
+            </div>
+        </div>
+
+
+    </div>
+    <script>
+        const modalcontainer = document.
+            querySelector(".modal-container");
+        const modaltriggers = document.
+            querySelectorAll(".modal-trigger");
+
+        modaltriggers.forEach(trigger => trigger.addEventListener("click", togglemodal))
+
+
+
+        function togglemodal() {
+            modalcontainer.classList.toggle("active")
+
+        }
+    </script>
+    <script>
+        $(function () {
+            $('.toggle').hide();
+            $('.list_toggle').click(function () {
+                $('.video').hide(1000);
+                $('.toggle').slideToggle(1000);
+            });
+            $('.close_toggle').click(function () {
+                $('.video').show(1000);
+                $('.toggle').slideToggle(1000);
+            });
+
+
+        });
+    </script>
+
+</body>
+
+
+</html>
